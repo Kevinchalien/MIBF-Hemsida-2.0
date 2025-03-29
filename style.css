@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    color: #000000;
+    overflow-x: hidden;
+    position: relative;
+    background-color: white;
+    background-image: url("assets/bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0.8) 0%, 
+                rgba(0, 0, 0, 0.5) 30%, 
+                rgba(0, 0, 0, 0.3) 70%, 
+                rgba(0, 0, 0, 0.1) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    height: 100px;
+    padding-left: 10px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px #b91919) drop-shadow(0 0 10px #b91919);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    transition: all 0.7s ease;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff; 
+    font-weight: 400;
+    transition: all 0.5s ease;
+    text-shadow: 0 0 5px #b91919, 0 0 15px #b91919, 0 0 25px #b91919;
+}
+
+.nav-links a:hover {
+    color: #cccccc;
+    transform: scale(1.1);
+}
+
+.login-btn {
+    background-color: #f0f0f0;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.7s ease;
+}
+
+.login-btn:hover {
+    color: #f0f0f0;
+    background: #000;
+    border-color: #dedede;
+    box-shadow: 0 0 5px #b91919, 0 0 25px #b91919, 0 0 50px #b91919, 0 0 100px #b91919;
+}
+
+button .ri-account-circle-fill {
+    font-size: 1.5rem;
+    color: #000;
+    transition: all 0.7s ease;
+}
+
+.login-btn:hover .ri-account-circle-fill {
+    color: #f0f0f0;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    height: 65vh; /* Increased height to ensure proper space for overlap */
+    width: 100%;
+    overflow: visible; /* Important to allow elements to overflow */
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tagline {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-title {
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(185, 25, 25, 0.6);
+}
+
+.club-text {
+    position: relative;
+    align-self: flex-end;
+    font-size: 80px;
+    font-weight: 700;
+    margin-top: -80px;
+    margin-right: 50px;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 
+                 0 0 20px rgba(185, 25, 25, 0.8), 
+                 0 0 40px rgba(185, 25, 25, 0.6);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+}
+
+.basketball-player-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    height: 60%;
+    z-index: 2;
+}
+
+.basketball-player {
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Sports Section Styles */
+.sports-section {
+    position: relative;
+    background-color: white;
+    padding-top: 50px; /* Increased padding to create more room for overlapping cards */
+    padding-bottom: 60px;
+    margin-top: -150px; /* Increased negative margin for more overlap */
+    z-index: 3;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
+}
+
+.sports-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 25px;
+    padding: 0 20px; /* Removed top padding to allow cards to move up more */
+    margin-top: -70px; /* Added negative margin to pull grid up */
+}
+
+.sport-card {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-60px); /* Increased value to move cards up more */
+    cursor: pointer;
+    z-index: 4; /* Higher z-index to ensure cards appear above sections */
+}
+
+.sport-card:hover {
+    transform: translateY(-70px); /* Adjusted hover state to maintain relative movement */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.sport-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sport-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.sport-text {
+    font-size: 16px;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+    text-decoration: underline;
+}
+
+.sport-name {
+    font-size: 22px;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+    .sports-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: -60px;
+    }
+    
+    .hero-section {
+        height: 70vh;
+    }
+    
+    .sports-section {
+        margin-top: -140px;
+    }
+    
+    .sport-card {
+        transform: translateY(-50px);
+    }
+    
+    .sport-card:hover {
+        transform: translateY(-60px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 60px;
+    }
+    
+    .club-text {
+        font-size: 60px;
+        margin-right: 30px;
+        margin-top: -60px;
+    }
+    
+    .sports-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 15px;
+        margin-top: -50px;
+    }
+    
+    .hero-section {
+        height: 75vh;
+    }
+    
+    .sports-section {
+        margin-top: -130px;
+    }
+    
+    .sport-card {
+        transform: translateY(-40px);
+    }
+    
+    .sport-card:hover {
+        transform: translateY(-50px);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 40px;
+    }
+    
+    .club-text {
+        font-size: 40px;
+        margin-right: 20px;
+        margin-top: -40px;
+    }
+    
+    .tagline {
+        font-size: 14px;
+    }
+    
+    .sports-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: -40px;
+    }
+    
+    .sport-icon {
+        font-size: 24px;
+    }
+    
+    .sport-name {
+        font-size: 14px;
+    }
+    
+    .hero-section {
+        height: 80vh;
+    }
+    
+    .sports-section {
+        margin-top: -120px;
+    }
+    
+    .sport-card {
+        transform: translateY(-30px);
+    }
+    
+    .sport-card:hover {
+        transform: translateY(-40px);
+    }
+}
